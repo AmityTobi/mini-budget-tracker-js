@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <h1>💰 Budget Tracker</h1>
+
+      <div class="form">
+        <input type="text" id="desc" placeholder="Description (e.g. Salary)" />
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount (use - for expenses)"
+        />
+        <button id="add-btn">Add</button>
+      </div>
+
+      <div class="summary">
+        <p><strong>Balance:</strong> <span id="balance">₦0</span></p>
+        <p><strong>Total Income:</strong> <span id="income">₦0</span></p>
+        <p><strong>Total Expenses:</strong> <span id="expenses">₦0</span></p>
+      </div>
+
+      <div class="controls">
+        <button id="filter-income">Show Income</button>
+        <button id="filter-expense">Show Expenses</button>
+        <button id="show-all">Show All</button>
+        <button id="sort-asc">Sort ↑</button>
+        <button id="sort-desc">Sort ↓</button>
+        <button id="reset">Reset</button>
+      </div>
+
+      <ul class="transactions" id="txn-list">
+        <!-- Transactions will be rendered here -->
+      </ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
