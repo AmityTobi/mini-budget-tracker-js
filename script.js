@@ -16,6 +16,16 @@ const btnSortAsc = document.getElementById('sort-asc');
 const btnSortDesc = document.getElementById('sort-desc');
 const btnReset = document.getElementById('reset');
 
+//Functions
+
+//Formatted Cuyrrency
+const formatCur = function (value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency,
+  }).format(value);
+};
+
 // Data storage for all transactions
 const description = [];
 
@@ -33,19 +43,19 @@ const updateSummary = function (arr) {
 
   const balance = income + expenses;
 
-  labelIncome.textContent = `₦${income}`;
-  labelExpenses.textContent = `₦${Math.abs(expenses)}`;
-  labelBalance.textContent = `₦${balance}`;
+  labelIncome.textContent = formatCur(income, 'en-NG', 'NGN');
+  labelExpenses.textContent = formatCur(Math.abs(expenses), 'en-NG', 'NGN');
+  labelBalance.textContent = formatCur(balance, 'en-NG', 'NGN');
 };
 
 // Render the transactions list
 const renderTransactions = function (arr) {
   txnList.innerHTML = '';
+
   arr.forEach(txn => {
     const type = txn.expenses > 0 ? 'income' : 'expense';
-    const html = `<li class ="${type}">${txn.desc}: ₦${Math.abs(
-      txn.expenses
-    )}</li>`;
+    const formatedAmount = formatCur(Math.abs(txn.expenses), 'en-NG', 'NGN');
+    const html = `<li class ="${type}">${txn.desc}: ${formatedAmount}</li>`;
     txnList.insertAdjacentHTML('afterbegin', html);
   });
 };
