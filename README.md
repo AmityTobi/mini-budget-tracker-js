@@ -13,7 +13,7 @@ A lightweight and interactive web app that helps you track income and expenses i
 
 ## 🚀 How to Use
 
-1. Clone this repo or [View Live Demo](#) _(replace with GitHub Pages link)_
+1. Clone this repo or [View Live Demo](https://amitytobi.github.io/mini-budget-tracker-js/)
 2. Add a description and amount (positive for income, negative for expense)
 3. Use filters or sort to customize view
 4. Click **Reset** to start fresh
